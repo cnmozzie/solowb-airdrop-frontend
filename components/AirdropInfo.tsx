@@ -120,7 +120,7 @@ export const AirdropInfo: FC<Props> = ({myDonate, price, setTransactionUrl }) =>
       <Text color="white">You will get {price} solowb for every solana you donate </Text>
       {
         myClaim > 0 ? ( 
-        <Text color="white">You've claimed {myClaim} solowb </Text>
+        <Text color="white">You claimed {myClaim} solowb </Text>
         ) :(
           <VStack>
           {myDonate>0 && (
