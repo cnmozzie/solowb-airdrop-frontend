@@ -19,7 +19,7 @@ export const TOKEN_MINT = new anchor.web3.PublicKey(
 );
 
 export const faucet = new anchor.web3.PublicKey(
-  "CAFaKUidizzr3epvHbEY5Zmk6d8jGQTodmNvjHMDBAuG"
+  "A1nTLvnf7HYN3qZoqW7uKQYV43TbkhEouFzpGFCXu4WE"
 );
 
 export interface Props {

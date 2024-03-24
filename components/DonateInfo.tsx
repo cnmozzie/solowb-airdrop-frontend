@@ -11,7 +11,7 @@ import {
   
   const PROGRAM_ID = `2uebyRVefvi2GysvsgHkkRosDYfoa5qJDRZByadai8de`
   export const faucet = new anchor.web3.PublicKey(
-    "CAFaKUidizzr3epvHbEY5Zmk6d8jGQTodmNvjHMDBAuG"
+    "A1nTLvnf7HYN3qZoqW7uKQYV43TbkhEouFzpGFCXu4WE"
   );
   
   export interface Props {
@@ -26,6 +26,7 @@ import {
     const [totalSol, setTotalSol] = useState(0)
     const [totalUsers, setTotalUsers] = useState(0)
     const [toDonate, setToDonate] = useState(0)
+    const [table, setTable] = useState(0)
     const [program, setProgram] = useState<anchor.Program>()
     const { connection } = useConnection()
     const wallet = useAnchorWallet()
@@ -60,6 +61,7 @@ import {
       try {
         const userInfo = await program.account.userInfo.fetch(USER_PDA);
         setMyDonate(userInfo.donate.toNumber()/1e9)
+        setTable(userInfo.table)
       }
       catch(err) {
         console.log(err)
@@ -87,8 +89,9 @@ import {
 
         const data = new BN(toDonate*1e9);
         console.log(data)
+        const table = 0
         const sig = await program.methods
-          .donateLamports(data)
+          .donateLamports(data, table)
           .accounts({
             faucet: faucet,
             userInfo: USER_PDA,
@@ -116,6 +119,7 @@ import {
             <Button onClick={() => refreshInfo(program)}>Refresh info</Button>
         </HStack>}
         <Text color="white">Your Donated Amount: {myDonate} sol</Text>
+        <Text color="white">You are on table # {table}</Text>
         <Text color="white">Total Donated Amount: {totalSol} sol</Text>
         <Text color="white">Total Users: {totalUsers}</Text>
       </VStack>

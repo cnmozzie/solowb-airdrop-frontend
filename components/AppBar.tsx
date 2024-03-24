@@ -8,7 +8,7 @@ export const AppBar: FC = () => {
     // <div className={styles.AppHeader}>
     <div className={styles.AppHeader}>
       <Image src="/solanaLogo.png" height={30} width={200} />
-      <span>Solana Losercoin Airdrop</span>
+      <span>The funeral of LOWB (LOWB葬礼，预计于清明节举办)</span>
       <WalletMultiButton />
     </div>
   )
