@@ -5,6 +5,8 @@ import { useWallet } from "@solana/wallet-adapter-react"
 import { AirdropInfo } from "../components/AirdropInfo"
 import { useState } from "react"
 import Head from "next/head"
+import { useTranslation } from 'react-i18next';
+import '../i18n';
 import {
   Spacer,
   VStack,
@@ -25,13 +27,15 @@ const Home: NextPage = (props) => {
   const [transactionUrl, setTransactionUrl] = useState("")
   const wallet = useWallet()
 
+  const { t, i18n } = useTranslation();
+
   return (
     <div className={styles.App}>
       <Head>
         <title>The funeral of LOWB</title>
       </Head>
-      <Box h="calc(30vh)" w="full">
-        <Stack w="full" h="calc(30vh)">
+      <Box h="calc(10vh)" w="full">
+        <Stack w="full" h="calc(10vh)">
           <AppBar />
 
           
