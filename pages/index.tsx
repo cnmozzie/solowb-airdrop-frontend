@@ -29,6 +29,51 @@ const Home: NextPage = (props) => {
 
   const { t, i18n } = useTranslation();
 
+
+  const [products, setProducts] = useState([
+    {
+      id: 1,
+      image: '/mubei.png',
+      price: 100,
+      quantity : 0,
+    },
+    {
+      id: 2,
+      image: '/xianglu.png',
+      price: 10,
+      quantity : 0,
+    },
+    {
+      id: 3,
+      image: '/huaquan.png',
+      price: 1,
+      quantity : 0,
+    },
+    {
+      id: 4,
+      image: '/gold.png',
+      price: 0.01,
+      quantity : 0,
+    },
+  ]);
+
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = (product) => {
+    setCart([...cart, product]);
+  };
+
+  const handleQuantityChange = (product, quantity) => {
+    const newCart = [...products];
+    const productIndex = newCart.findIndex((p) => p.id === product.id);
+    newCart[productIndex].quantity = quantity;
+    setProducts(newCart);
+  };
+
+  const getSubtotal = () => {
+    return products.reduce((total, product) => total + product.price * product.quantity, 0);
+  };
+
   return (
     <div className={styles.App}>
       <Head>
@@ -75,7 +120,52 @@ const Home: NextPage = (props) => {
         </Stack>
       </Box>
       <div className="container mx-auto">
+        
+        
+      <div className="md:flex">
+    <div className="md:w-full">
+      <h1 className="text-3xl font-bold text-white">Activity #1: Coming Soon...</h1>
+    </div>
+  </div>
+  <br/>
+      
+      <div className="md:flex">
+       
+      <div className="grid grid-cols-4 gap-4">
+        {products.map((product) => (
+          <div key={product.id} className=" shadow-md rounded-md p-4">
+            <img src={product.image} alt="Product" className="w-full h-48 object-cover" />
+            <div className="flex justify-between items-center mt-4">
+              <h2 className="text-lg font-bold text-white">{product.price} Sol</h2>
+              <div className="flex items-center">
+                <input
+                  type="number"
+                  min="1"
+                  value={product.quantity}
+                  onChange={(e) => handleQuantityChange(product, e.target.value)}
+                  className="border border-gray-300 rounded-md p-1 text-center w-16"
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="pt-20">
+        <div className="bg-gray-800 text-white rounded-md p-4">
+          <div className="flex justify-between items-center">
+            <h2 className="text-lg font-bold">
+              Total: {getSubtotal()} Sol
+            </h2>
+            <button className="bg-green-500 text-white px-4 py-2 rounded-md shadow-sm opacity-50 cursor-not-allowed">
+              Donate Now!
+            </button>
+          </div>
+        </div>
+      </div>
 
+        </div>
+
+        <br/><br/><br/>
   <div className="md:flex">
     <div className="md:w-1/2">
       <h1 className="text-3xl font-bold text-white">Introduction</h1>
