@@ -34,15 +34,11 @@ const Home: NextPage = (props) => {
       <Head>
         <title>The funeral of LOWB</title>
       </Head>
-      <Box h="calc(20vh)" w="full">
-        <Stack w="full" h="calc(20vh)">
-          <AppBar />
-
-        </Stack>
-      </Box>
       <div className="container mx-auto">
+
+      <AppBar />
         
-      <div>
+      <div className="py-5">
             
             <Spacer />
             {wallet.connected ? (
