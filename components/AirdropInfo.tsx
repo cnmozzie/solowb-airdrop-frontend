@@ -15,11 +15,11 @@ const PROGRAM_ID = new anchor.web3.PublicKey(
 )
 
 export const TOKEN_MINT = new anchor.web3.PublicKey(
-  "4xYbGrvukP9TbqT2c6PjzniX3EHmZgrvknfc5kzH2xAL"
+  "37djsN4ZfSJ8enTsDwoSNVh9n9S6eUFW95nVe64ZSxxS"
 );
 
 export const faucet = new anchor.web3.PublicKey(
-  "A1nTLvnf7HYN3qZoqW7uKQYV43TbkhEouFzpGFCXu4WE"
+  "H4uDLropG84finHeLskmpgQKibnmfCd6xziwMHCjN2du"
 );
 
 export interface Props {
@@ -111,21 +111,22 @@ export const AirdropInfo: FC<Props> = ({myDonate, price, setTransactionUrl }) =>
         })
       .rpc()
 
-    setTransactionUrl(`https://explorer.solana.com/tx/${sig}?cluster=devnet`)
+    refreshInfo(program)
+    setTransactionUrl(`https://explorer.solana.com/tx/${sig}?cluster=mainnet-beta`)
   }
 
   return (
     <VStack>
-      <Text color="white">Donate channel is closed</Text>
-      <Text color="white">You will get {price} solowb for every solana you donate </Text>
+      <h1 className="text-3xl font-bold text-white">The Funeral Start</h1>
+      <Text color="white">You will get {price} $ASH for every solana you donate </Text>
       {
         myClaim > 0 ? ( 
-        <Text color="white">You claimed {myClaim} solowb </Text>
+        <Text color="white">You claimed {myClaim} ASH </Text>
         ) :(
           <VStack>
           {myDonate>0 && (
             <HStack>
-              <Button onClick={() => claim(program)}>Claim solowb</Button>
+              <Button onClick={() => claim(program)}>Claim ASH</Button>
               <Button onClick={() => refreshInfo(program)}>Refresh info</Button>
             </HStack>)
           }

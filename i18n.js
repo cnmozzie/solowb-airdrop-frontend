@@ -8,16 +8,28 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 const resources = {
   en: {
     translation: {
-      "Welcome to React": "Welcome to React and react-i18next",
+      "Activity1": "Activity #1: Donate to the funeral and get $ASH",
+      "Activity2": "Activity #2: Share the funeral Activity to get POINTS",
+      "share on Twitter": "share on Twitter",
+      "Donate Now!": "Donate Now!",
+      "我捐赠了": "I donated ",
+      "支持葬礼仪式": " sol for lowb funeral. Join with me on Apr 4 to get airdrops of $ASH. @ASHofLOWB #SolanaPresale ",
       "EN": "EN",
-      "funeral": "The funeral of LOWB (on Apr 4)"
+      "funeral": "The funeral of LOWB (on Apr 4)",
+      "开放空投": "You can go back to this page to claim the airdrops right after the funeral."
     }
   },
   zh: {
     translation: {
-      "Welcome to React": "欢迎使用 React 和 react-i18next",
+      "Activity1": "活动1：捐赠丧葬用品。获取$ASH空投",
+      "Activity2": "活动2：分享葬礼活动，获得社区点数",
+      "share on Twitter": "一键分享到Twitter",
+      "Donate Now!": "立即捐赠",
+      "我捐赠了": "我捐赠了",
+      "支持葬礼仪式": "个sol支持葬礼仪式，快来和我一起在清明节参与lowb的葬礼吧。 @ASHofLOWB #SolanaPresale ",
       "EN": "ZH",
-      "funeral": "LOWB葬礼（清明节举行）"
+      "funeral": "LOWB葬礼（清明节举行）",
+      "开放空投": "空投通道将于清明节当天开启，别忘了回到这个页面领取$ASH空投"
     }
   }
 };
