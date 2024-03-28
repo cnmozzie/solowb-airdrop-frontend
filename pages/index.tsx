@@ -34,8 +34,8 @@ const Home: NextPage = (props) => {
       <Head>
         <title>The funeral of LOWB</title>
       </Head>
-      <Box h="calc(10vh)" w="full">
-        <Stack w="full" h="calc(10vh)">
+      <Box h="calc(20vh)" w="full">
+        <Stack w="full" h="calc(20vh)">
           <AppBar />
 
         </Stack>
