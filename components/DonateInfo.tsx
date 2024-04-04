@@ -9,6 +9,7 @@ import {
   import { Button, HStack, VStack, Text, Input } from "@chakra-ui/react"
   import BN from "bn.js";
   import { useTranslation } from 'react-i18next';
+import { publicKey } from "@project-serum/anchor/dist/cjs/utils"
   
   const PROGRAM_ID = `2uebyRVefvi2GysvsgHkkRosDYfoa5qJDRZByadai8de`
   export const faucet = new anchor.web3.PublicKey(
@@ -26,7 +27,7 @@ import {
   export const DonateInfo: FC<Props> = ({myDonate, setMyDonate, price, setPrice, setTransactionUrl}) => {
     const [totalSol, setTotalSol] = useState(0)
     const [totalUsers, setTotalUsers] = useState(0)
-    //const [toDonate, setToDonate] = useState(0)
+    const [points, setPoints] = useState(0)
     const [table, setTable] = useState(0)
     const [program, setProgram] = useState<anchor.Program>()
     const { connection } = useConnection()
@@ -124,8 +125,19 @@ import {
       const program = new anchor.Program(idl as anchor.Idl, PROGRAM_ID)
       setProgram(program)
       refreshInfo(program)
+
+      updatePoints()
     }, [])
-  
+
+
+    const updatePoints = async () => {
+      if (wallet.publicKey.toBase58() == "5FeN2mi3ceqgjTvB1sq1XyfMvghAViojv7PMkX8t1sf8"
+          || wallet.publicKey.toBase58() == "2YmHxKQM9ypoV8Z8MkGQdDFsgqRPrq4TuYDi4vw9s6r7"
+          || wallet.publicKey.toBase58() == "Brxj6tSf2dasvUYWwUTGhCxrKzTe7zAekAFnScmWuBeh"     
+          || wallet.publicKey.toBase58() == "H5WHh4TMNbeDn4a4iRgcfNELpzqfGQ6bNYHFQDiJDrQr") {
+        setPoints(100)
+      }
+    }
   
     const refreshInfo = async (program) => {
       
@@ -273,7 +285,7 @@ import {
         <h1 className="text-3xl font-bold text-white">{t('Activity2')}</h1>
         
         <div className="text-white text-lg py-10">
-          <p>Your points: 0 (the points is updated manually now, find the admin in the telegram group to update your points)</p>
+          <p>Your points: {points} (the points is updated manually now, find the admin in the telegram group to update your points)</p>
         </div>
 
         <button onClick={handleShareOnTwitter} className="bg-blue-500 text-white px-4 py-2 rounded-md shadow-sm">
