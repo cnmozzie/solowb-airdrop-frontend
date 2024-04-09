@@ -9,7 +9,7 @@ const resources = {
   en: {
     translation: {
       "Activity1": "Activity #1: Donate to the funeral and get $ASH",
-      "Activity2": "Activity #2: Share the funeral Activity to get POINTS",
+      "Activity2": "Activity: Share the funeral Activity to get POINTS",
       "share on Twitter": "share on Twitter",
       "Donate Now!": "Donate Now!",
       "我捐赠了": "I donated ",
@@ -22,7 +22,7 @@ const resources = {
   zh: {
     translation: {
       "Activity1": "活动1：捐赠丧葬用品。获取$ASH空投",
-      "Activity2": "活动2：分享葬礼活动，获得社区点数",
+      "Activity2": "最新活动：分享葬礼活动，获得社区点数",
       "share on Twitter": "一键分享到Twitter",
       "Donate Now!": "立即捐赠",
       "我捐赠了": "我捐赠了",

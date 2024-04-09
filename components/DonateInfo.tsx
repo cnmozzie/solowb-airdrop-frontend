@@ -122,9 +122,9 @@ import { publicKey } from "@project-serum/anchor/dist/cjs/utils"
         anchor.setProvider(provider)
       }
   
-      const program = new anchor.Program(idl as anchor.Idl, PROGRAM_ID)
-      setProgram(program)
-      refreshInfo(program)
+      //const program = new anchor.Program(idl as anchor.Idl, PROGRAM_ID)
+      //setProgram(program)
+      //refreshInfo(program)
 
       updatePoints()
     }, [])
@@ -207,7 +207,7 @@ import { publicKey } from "@project-serum/anchor/dist/cjs/utils"
     return (
       <>
 
-      {!price && <>
+      {price && <>
       <div className="md:flex">
       <div className="md:w-full">
         <h1 className="text-3xl font-bold text-white">{t('Activity1')}</h1>
@@ -268,17 +268,6 @@ import { publicKey } from "@project-serum/anchor/dist/cjs/utils"
         {!price && <Text color="white">{t("开放空投")}</Text>}
       </div>
     </div>}
-
-    <div className="container mx-auto p-4">
-      <h1 className="text-xl font-bold text-white">Total donations with {totalUsers} sponsors</h1>
-      <div className="flex flex-col items-center">
-        <div className="grid grid-cols-4 gap-4 mt-4">
-          {totalImages.map((image) => (
-            <img key={image.key} src={image.image} alt="Image" className="w-full h-48 object-cover" />
-          ))}
-        </div>
-      </div>
-    </div>
 
     <div className="md:flex">
       <div className="md:w-full">
