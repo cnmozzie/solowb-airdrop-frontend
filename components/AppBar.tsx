@@ -21,10 +21,10 @@ export const AppBar: FC = () => {
   <div className="container flex justify-between items-center mx-auto px-1 py-2">
     <div className="hidden md:block">
       <a href="#">
-        <img src="/solanaLogo-min.png" alt="Your Logo" className="w-80 h-12" />
+        <img src="/solanaLogo-min.png" alt="Your Logo" className="w-40 h-6" />
       </a>
     </div>
-    <h1 className="text-4xl font-bold px-1">{t('funeral')}</h1>
+    <h1> <span className="text-3xl font-bold px-1">Lowb</span> <span className="text-4xl font-bold px-1">ASH</span></h1>
     <div className="flex items-center">
       <button className="bg-white text-gray-800 px-2 py-1 rounded-md shadow-sm" onClick={handleLanguageChange}>
         {t('EN')}

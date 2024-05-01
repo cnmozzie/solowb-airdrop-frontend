@@ -271,6 +271,13 @@ import { publicKey } from "@project-serum/anchor/dist/cjs/utils"
 
     <div className="md:flex">
       <div className="md:w-full">
+          <img src="/ash_logo.jpg" alt="Image" className="w-full h-72 object-cover" />
+        
+      </div>
+    </div>
+
+    <div className="md:flex">
+      <div className="md:w-full">
         <h1 className="text-3xl font-bold text-white">{t('Activity2')}</h1>
         
         <div className="text-white text-lg py-10">
